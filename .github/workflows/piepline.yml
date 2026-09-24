@@ -1,0 +1,15 @@
+name: EE Assesment Pipeline
+on:
+  push:
+    branches: ["master"]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: venv creatin
+      - run: python -m venv .venv && source && .venv/bin/activate && pip install -r requirements.txt
+
+      - name: pytest
+      - run: pytest tests/
+    
